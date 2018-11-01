@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="48px"
+   height="48px"
+   id="svg2985"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="delta-notification-v7.svg"
+   inkscape:export-filename="/home/bpetersen/projects/messenger-android/MessengerProj/src/main/res/drawable-xxhdpi/notification.png"
+   inkscape:export-xdpi="135"
+   inkscape:export-ydpi="135">
+  <defs
+     id="defs2987">
+    <linearGradient
+       id="linearGradient4409">
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:1"
+         offset="0"
+         id="stop4411" />
+      <stop
+         style="stop-color:#cccccc;stop-opacity:0;"
+         offset="1"
+         id="stop4413" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4399">
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:1;"
+         offset="0"
+         id="stop4401" />
+      <stop
+         style="stop-color:#f9f9f9;stop-opacity:0;"
+         offset="1"
+         id="stop4403" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4375">
+      <stop
+         style="stop-color:#364e59;stop-opacity:1;"
+         offset="0"
+         id="stop4377" />
+      <stop
+         style="stop-color:#77888f;stop-opacity:1;"
+         offset="1"
+         id="stop4379" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4367">
+      <stop
+         style="stop-color:#dc000f;stop-opacity:1;"
+         offset="0"
+         id="stop4369" />
+      <stop
+         style="stop-color:#00ff00;stop-opacity:0;"
+         offset="1"
+         id="stop4371" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4359">
+      <stop
+         style="stop-color:#dc000f;stop-opacity:1;"
+         offset="0"
+         id="stop4361" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4363" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4375"
+       id="linearGradient4381"
+       x1="37.451538"
+       y1="37.184917"
+       x2="22.828978"
+       y2="13.619884"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93766393,0,0,0.93766393,1.542566,1.7199693)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4409"
+       id="linearGradient4415"
+       x1="16.345125"
+       y1="3.8388948"
+       x2="36.001561"
+       y2="24.359164"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4375"
+       id="linearGradient3935"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93766393,0,0,0.93766393,1.542566,1.7199693)"
+       x1="37.451538"
+       y1="37.184917"
+       x2="22.828978"
+       y2="13.619884" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4375"
+       id="linearGradient3938"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.93766393,0,0,0.93766393,1.542566,1.7199693)"
+       x1="37.451538"
+       y1="37.184917"
+       x2="22.828978"
+       y2="13.619884" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="9.8994949"
+     inkscape:cx="30.239069"
+     inkscape:cy="29.230062"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:grid-bbox="true"
+     inkscape:document-units="px"
+     inkscape:snap-global="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:window-width="1543"
+     inkscape:window-height="876"
+     inkscape:window-x="57"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2990">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
+       d="M 24,2.001661 C 11.851678,2.1493597 2,12.126974 2,24.275209 2,36.423446 11.851678,46.146039 24,45.998339 36.850607,43.824624 32.778236,40.5607 45.632721,45.484617 38.972996,33.766205 45.857031,32.986485 46,23.724793 46,11.576553 36.148324,1.8539621 24,2.001661 Z m -0.146911,4.5134208 c 2.534719,3.29e-5 4.765877,0.3302465 6.647746,1.0274456 1.247171,0.4574393 2.031794,1.0404933 2.460768,1.7246409 0.0078,0.00587 0.02907,-0.00587 0.03673,0 0.735701,0.5642151 1.101821,1.2165027 1.101836,1.9815017 -2.4e-5,0.588801 -0.236991,1.080457 -0.69783,1.46778 -0.460884,0.387376 -0.96484,0.550444 -1.579299,0.550416 -0.883337,2.8e-5 -1.931331,-0.508747 -3.121869,-1.577862 C 27.491394,10.604452 26.460927,9.8478082 25.616029,9.4139458 24.790306,8.9646507 23.828261,8.7167821 22.714528,8.7167503 c -1.420999,3.18e-5 -2.604164,0.2593137 -3.525877,0.7705848 -0.902527,0.5113332 -1.358938,1.1546419 -1.358932,1.9448069 -4e-6,0.533936 0.233973,1.01851 0.624375,1.504474 0.864565,0.677743 2.651643,1.796108 5.509181,3.375892 3.322022,1.84381 5.688353,3.255174 7.051752,4.293254 0.648075,0.486618 1.228777,1.029218 1.76294,1.614557 0.03561,0.03902 0.07508,0.07062 0.110183,0.110082 0.01251,0.01183 0.02428,0.02481 0.03673,0.03669 0.86546,0.826332 1.590823,1.770603 2.203671,2.825475 0.86409,1.487441 1.322178,3.075739 1.322205,4.733587 -2.7e-5,2.912885 -1.302515,5.474707 -3.856427,7.705841 -2.534756,2.215645 -5.489314,3.339196 -8.888149,3.339197 -3.091618,-10e-7 -5.691563,-0.896883 -7.823037,-2.678697 -0.382414,-0.319677 -0.714679,-0.668286 -1.02838,-1.027446 -1.961598,-1.755883 -2.938233,-4.044718 -2.938231,-6.898561 -2e-6,-2.866382 1.146435,-5.270844 3.489148,-7.192116 2.318157,-1.885656 5.166818,-3.026277 8.520869,-3.449282 -0.846171,-0.699382 -1.806974,-1.470543 -3.048414,-2.348446 -1.824885,-1.292122 -3.041411,-2.328225 -3.709517,-3.082336 -0.02437,-0.02188 -0.04974,-0.0518 -0.07346,-0.07338 -0.30992,-0.282096 -0.573805,-0.540935 -0.771285,-0.770584 -0.652892,-0.774674 -0.991659,-1.617744 -0.991653,-2.53192 -6e-6,-1.3634436 0.77597,-2.4543811 2.350584,-3.2291132 1.5746,-0.7901634 3.635538,-1.1741912 6.170285,-1.174228 z m 2.313856,15.0447352 c -5.51114,0.728238 -8.26378,3.760515 -8.263773,9.136927 -7e-6,2.61845 0.586894,4.68806 1.799666,6.201365 0.01277,0.01192 0.02391,0.0249 0.03673,0.03669 1.248686,1.150674 2.643689,1.761336 4.223706,1.761335 1.901037,10e-7 3.472189,-0.766429 4.701169,-2.238363 1.228943,-1.487422 1.836373,-3.492363 1.836394,-6.017895 -1.7e-5,-2.978578 -1.147681,-5.65964 -3.415694,-8.072784 -0.292826,-0.273313 -0.594324,-0.541545 -0.918198,-0.807275 z"
+       id="path3799"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscccscccccccccccccccccccccsscsccccccccccsccscccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="17.857143"
+       y="24.714287"
+       id="text4383"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/bpetersen/projects/messenger-android/MessengerProj/src/main/res/drawable-xhdpi/notification.png"
+       inkscape:export-xdpi="115.39"
+       inkscape:export-ydpi="115.39"><tspan
+         sodipodi:role="line"
+         id="tspan4385"
+         x="17.857143"
+         y="24.714287" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="14.285714"
+       y="24.714287"
+       id="text4421"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/bpetersen/projects/messenger-android/MessengerProj/src/main/res/drawable-xhdpi/notification.png"
+       inkscape:export-xdpi="115.39"
+       inkscape:export-ydpi="115.39"><tspan
+         sodipodi:role="line"
+         id="tspan4423" /></text>
+  </g>
+</svg>
