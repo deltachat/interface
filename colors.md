@@ -19,7 +19,11 @@
 - deaddrop background: `#cccccc`
 
 - self-bubble: #efffde
+- self-bubble time/date: #70b15c
+
 - other-bubble: #ffffff
+- other-bubble time/date: #9ea7b0 
+
 - date/system-messages: #000000 with 0x44 = 27% alpha
 
 ## delivery information
