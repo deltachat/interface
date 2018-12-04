@@ -18,6 +18,9 @@
 - delivery information: right aligned
 - deaddrop background: `#cccccc`
 
+- self-bubble: #efffde
+- other-bubble: #ffffff
+- date/system-messages: 
 
 ## delivery information
 
