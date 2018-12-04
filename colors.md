@@ -20,7 +20,7 @@
 
 - self-bubble: #efffde
 - other-bubble: #ffffff
-- date/system-messages: 
+- date/system-messages: #000000 with 0x44 = 27% alpha
 
 ## delivery information
 
