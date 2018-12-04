@@ -16,6 +16,7 @@
 - chat name: bold
 - text excerpt: normal and smaller
 - delivery information: right aligned
+- deaddrop background: `#cccccc`
 
 
 ## delivery information
