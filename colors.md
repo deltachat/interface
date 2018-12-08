@@ -11,12 +11,14 @@
 - subtitle: normal and smaller
 
 
-## conversation list
+## chat list
 
 - chat name: bold
 - text excerpt: normal and smaller
 - delivery information: right aligned
 - deaddrop background: `#cccccc`
+
+## chat
 
 - self-bubble: #efffde
 - self-bubble time/date: #70b15c
@@ -25,6 +27,10 @@
 - other-bubble time/date: #9ea7b0 
 
 - date/system-messages: #000000 with 0x44 = 27% alpha
+
+- send button: round, background `#415e6b`,
+  frouground icon from icons/ic_send*
+
 
 ## delivery information
 
