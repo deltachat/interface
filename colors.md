@@ -10,7 +10,6 @@
 - title: bold
 - subtitle: normal and smaller
 
-
 ## chat list
 
 - chat name: bold
@@ -21,12 +20,13 @@
 ## chat
 
 - self-bubble: #efffde
-- self-bubble time/date: #70b15c
+- self-bubble time/date/delivery: #70b15c
 
 - other-bubble: #ffffff
-- other-bubble time/date: #9ea7b0 
+- other-bubble time/date/delivery: #9ea7b0
 
 - date/system-messages: #000000 with 0x44 = 27% alpha
+  this transparancy is also nice for image-overlays
 
 - send button: round, background `#415e6b`,
   frouground icon from icons/ic_send*
@@ -36,5 +36,11 @@
 
 - _security-state_ followed by _time_ followed by _delivery-status-icon_
 - delivery-status-icon: _one or two checkmarks_, a _wait-circle_ or _failed_
+
+## audio and voice message colors
+
+- text: #ed824e, icon: #f68751 (orange)
+
+## document colors
 
 
