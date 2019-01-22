@@ -19,11 +19,11 @@
 
 ## chat
 
-- self-bubble: #efffde
+- self-bubble background #efffde
 - self-bubble time/date/delivery: #70b15c
 
-- other-bubble: #ffffff
-- other-bubble time/date/delivery: #9ea7b0
+- other-bubble background: #ffffff
+- other-bubble time/date/delivery: #808080
 
 - date/system-messages: #000000 with 0x44 = 27% alpha
   this transparancy is also nice for image-overlays
