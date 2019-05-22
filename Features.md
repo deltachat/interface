@@ -123,7 +123,8 @@ What we plan to add in the Future. (This List is neiter complete nor final and w
 - A/V Calls (probably over WebRTC) [forum topic (webRTC)](https://support.delta.chat/t/webrtc-for-communicating/410/15) [forum topic (video chat)](https://support.delta.chat/t/video-chat-integration/388)
 - show Chat encryption state [forum post](https://support.delta.chat/t/show-end-to-end-encryption-state-of-chat/230)
   - Indicator wether current message will be sent encrypted
-
+- Stickers
+- Burner accounts
 
 ### Feature Requests
 
