@@ -29,7 +29,7 @@
   this transparancy is also nice for image-overlays
 
 - send button: round, background `#415e6b`,
-  frouground icon from icons/ic_send*
+  foreground icon from `icons/ic_send*`
 
 
 ## delivery information
@@ -42,5 +42,11 @@
 - text: #ed824e, icon: #f68751 (orange)
 
 ## document colors
+
+- text + icon: #34a0f4
+
+## headlines in dialogs
+
+- #42A5F5 (blue)
 
 
