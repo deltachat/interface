@@ -2,9 +2,9 @@
 
 Deltachat is going to support the following subset of markdown:
 
-### `**bold**`
+### `*italics*`
 
-### `__underline__`
+### `**bold**`
 
 ### `~~strikethrough~~`
 
@@ -19,11 +19,15 @@ Should get rendered in a monospace font and with a different background.
  
 ### ` ``` fence code block ``` `
 
-```md
+```
 Similar to `inline-code` but not inline and it may supports code highlighting.
 ```
 ` ```[lang?] [content]``` `
  A bit modified from the common syntax to allow one liners.
+ 
+The code **highlighting** is **optional** as implementation (time)cost 
+may not be worth the small gain.
+The `language` definition should be parsed separately and omitted in this case.
 
 ### `:emoji:`
 
@@ -42,3 +46,5 @@ Clickable. (could get replaced with an user hash/email/id on send/on recieve so 
 ## Things that will not be suported:
 - Inline HTML
 - `[Name](url)` links
+- underline - can be confused with links
+
