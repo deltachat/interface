@@ -1,4 +1,5 @@
 # Markdown in messages
+> This list is for every formating thing that goes beyond plain-text.
 
 Deltachat is going to support the following subset of markdown:
 
