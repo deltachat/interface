@@ -3,7 +3,7 @@
 
 Deltachat is going to support the following subset of markdown:
 
-### `*italics*`
+### `*italics*` and `_italics_`
 
 ### `**bold**`
 
@@ -13,6 +13,8 @@ Deltachat is going to support the following subset of markdown:
 
 Make URLs clickable, but **don't** support the Link syntax `[Name](url)`
 because that could be used for misleading and as such be used in scams.
+
+### `<http://example.org>`  - Urls
 
 ### `` `inline-code` ``
 useful to send non markdown text in your message like source code snippets.
