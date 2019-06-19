@@ -5,7 +5,7 @@ Deltachat is going to support the following subset of markdown:
 
 ### `*italics*` and `_italics_`
 
-### `**bold**`
+### `**bold**` and `__bold__`
 
 ### `~~strikethrough~~`
 
@@ -31,6 +31,8 @@ Similar to `inline-code` but not inline and it may supports code highlighting.
 The code **highlighting** is **optional** as implementation (time)cost 
 may not be worth the small gain.
 The `language` definition should be parsed separately and omitted in this case.
+
+see https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting
 
 ### `:emoji:`
 
