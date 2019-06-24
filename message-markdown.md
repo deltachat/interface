@@ -27,7 +27,7 @@ Similar to `inline-code` but not inline and it may supports code highlighting.
 ```
 ` ```[lang?] [content]``` `
  A bit modified from the common syntax to allow one liners.
- 
+Also get displayed with an monospace font (a side effect of this is that it allows to display small ascii art).
 The code **highlighting** is **optional** as implementation (time)cost 
 may not be worth the small gain.
 The `language` definition should be parsed separately and omitted in this case.
