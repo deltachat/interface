@@ -48,6 +48,10 @@ see https://support.delta.chat/t/custom-deltachat-url-scheme/346
 ### Mentions `@username`
 Clickable. (could get replaced with an user hash/email/id on send/on recieve so that it's still valid on name change.)
 
+### $[inline TeX]$ $$[Tex displayed in block(new line)]$$
+for sharing math/physics equations in LaTeX format.
+see https://support.delta.chat/t/latex-code-in-deltachat/558
+
 ## Things that will not be suported:
 - Inline HTML
 - `[Name](url)` links
