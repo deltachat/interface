@@ -35,6 +35,7 @@ The `language` definition should be parsed separately and omitted in this case.
 see https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting
 
 ### `:emoji:`
+- could also be used for custom dc emojis
 
 ## Future:
 
@@ -57,3 +58,7 @@ see https://support.delta.chat/t/latex-code-in-deltachat/558
 - `[Name](url)` links
 - underline - can be confused with links
 
+## other / internal
+
+- Text
+- linebreaks
