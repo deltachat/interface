@@ -9,10 +9,9 @@
 - a Thunderbird installation with Enigmail or TB-AC.
 
 **Bob** is the "sparring partner" of Alice. Can be a daily-use Delta Chat
-account on some other phone. You need
+Desktop account. You need
 - an E-Mail address
-- some Delta Chat version
-- on a phone.
+- Delta Chat Desktop version >= 0.840.0
 
 ### Tests
 
@@ -35,10 +34,10 @@ account on some other phone. You need
     - [ ] Is it encrypted?
     - [ ] If Bob replies, does Alice receive the reply?
     - [ ] Is it encrypted?
-- Alice creates a verified group?
-- Alice initiates an Autocrypt Setup Message in Android
+- Autocrypt Setup Messages
+    - [ ] Alice initiates an Autocrypt Setup Message in Android
     - [ ] Can Alice import it in another device?
-    - [ ] Send an Autocrypt Setup Message from another client: can you import it in Android?
+    - [ ] Alice sends an Autocrypt Setup Message from another client: can Alice import it in Android?
 - Disable: Settings -> Advanced -> Prefer end-to-end encryption
     - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=mutual; " header?
 - Backup & Restore
