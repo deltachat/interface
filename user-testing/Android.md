@@ -2,27 +2,42 @@
 
 ### Preparation
 
-- create or get an existing test account ready
+**Alice** will be the tester. You need 
+- an E-Mail address 
+- and the release candidate build
+- on a phone.
+- a Thunderbird installation with Enigmail or TB-AC.
 
+**Bob** is the "sparring partner" of Alice. Can be a daily-use Delta Chat
+account on some other phone. You need
+- an E-Mail address
+- some Delta Chat version
+- on a phone.
 
 ### Tests
 
-- Send a message to the e-mail address of the contact
+- [ ] Installing the release candidate build on Alice' phone works.
+- Alice sends a message to the e-mail address of Bob:
     - [ ] Does it arrive?
-- The contact sends you a message
+- Bob answers Alice with another message:
     - [ ] Does it arrive?
     - [ ] Do you get a notification?
     - [ ] Is it encrypted?
-- Reply to the message of your contact
+- Alice replies to Bob's message:
     - [ ] Is it encrypted?
-- [ ] Create a group
-- [ ] Invite your contact
-- [ ] Do a contact verification
-- Contact creates a verified group
-    - [ ] Join the group via a qr scan
-    - [ ] Send a message to the group: is it encrypted?
-- Autocrypt Setup Message
-    - [ ] Send an Autocrypt Setup Message: can you import it in another client?
+- Alice creates a group and adds Bob as a member
+    - [ ] Does Bob receive the group invite?
+    - [ ] Is it encrypted?
+- [ ] Alice does a contact verification with Bob
+- Bob creates a verified group
+    - [ ] Alice joins the group via a QR scan
+    - [ ] Can Alice send a message to the group?
+    - [ ] Is it encrypted?
+    - [ ] If Bob replies, does Alice receive the reply?
+    - [ ] Is it encrypted?
+- Alice creates a verified group?
+- Alice initiates an Autocrypt Setup Message in Android
+    - [ ] Can Alice import it in another device?
     - [ ] Send an Autocrypt Setup Message from another client: can you import it in Android?
 - Disable: Settings -> Advanced -> Prefer end-to-end encryption
     - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=mutual; " header?
