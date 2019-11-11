@@ -1,6 +1,6 @@
 # Android Checklist
 
-### Preparation
+## Preparation
 
 **Alice** will be the tester. You need 
 - an E-Mail address 
@@ -13,7 +13,7 @@ Desktop account. You need
 - an E-Mail address
 - Delta Chat Desktop version >= 0.840.0
 
-### Tests
+## Tests
 
 - [ ] Installing the release candidate build on Alice' phone works.
 - Alice sends a message to the e-mail address of Bob:
@@ -45,4 +45,12 @@ Desktop account. You need
     - Delete account: Phone Settings -> Apps -> DeltaChat -> Clear Data
     - Open App again, tap restore from backup
     - [ ] Is everything still there?
+
+### Out of scope
+
+Creating verified groups is out of scope for a community tester, until the
+Desktop client can join verified groups.
+
+Things which are already tested by automated tests, and don't have any UI,
+don't need testing.
 
