@@ -27,6 +27,7 @@ Desktop account. You need
 - Alice creates a group and adds Bob as a member
     - [ ] Does Bob receive the group invite?
     - [ ] Is it encrypted?
+- [ ] Alice tries to search for Bob in her contact list
 - [ ] Alice does a contact verification with Bob
 - Bob creates a verified group
     - [ ] Alice joins the group via a QR scan
