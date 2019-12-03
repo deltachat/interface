@@ -46,7 +46,7 @@ Desktop account. You need
     - [ ] Can Alice import it in another device?
     - [ ] Alice sends an Autocrypt Setup Message from another client: can Alice import it in Android?
 - Disable: Settings -> Advanced -> Prefer end-to-end encryption
-    - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=mutual; " header?
+    - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=nopreference; " header?
 - Backup & Restore
     - [ ] Export Backup: Settings -> Chats & Media -> Backup
     - Delete account: Phone Settings -> Apps -> DeltaChat -> Clear Data
@@ -61,8 +61,7 @@ Desktop account. You need
     - [ ] Charlie finds the message in her Contact request and clicks "Never" this time
     - [ ] Bob sends Charlie another message, but Charlie doesn't receive it
 - [ ] Alice archives her Chat with Bob; she doesn't see it anymore
-- [ ] Bob writes her a mail, Alice doesn't receive it
-- [ ] Alice unarchives her Chat with Bob - the chat reappears, the mail is there
+- [ ] Bob writes her a mail, Alice receives it nonetheless, the chat is unarchived automatically
 
 ### Out of scope
 
