@@ -12,7 +12,9 @@ Desktop account. You need
 - an E-Mail address
 - Delta Chat Desktop version >= 0.840.0
 
-**Charlie** is the second account of Alice.
+**Charlie** is the second account of Alice. The Charlie points are cool if you
+have the time and a third E-Mail address for testing. If it's too much of a
+hassle, don't worry about it and leave out those points.
 
 ## Tests
 
@@ -52,6 +54,9 @@ Desktop account. You need
     - Delete account: Phone Settings -> Apps -> DeltaChat -> Clear Data
     - Open App again, tap restore from backup
     - [ ] Is everything still there?
+
+### Optional: Charlie
+
 - [ ] Alice logs out
 - [ ] Charlie logs in on Alice's device
 - [ ] Bob writes a message to Charlie
