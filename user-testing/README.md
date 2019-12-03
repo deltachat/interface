@@ -49,6 +49,8 @@ hassle, don't worry about it and leave out those points.
     - [ ] Alice sends an Autocrypt Setup Message from another client: can Alice import it in Android?
 - Disable: Settings -> Advanced -> Prefer end-to-end encryption
     - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=nopreference; " header?
+- Enable: Settings -> Advanced -> Prefer end-to-end encryption
+    - [ ] If you send out a mail afterwards, does it contain the "Autocrypt: prefer-encrypt=mutual; " header again?
 - Backup & Restore
     - [ ] Export Backup: Settings -> Chats & Media -> Backup
     - Delete account: Phone Settings -> Apps -> DeltaChat -> Clear Data
