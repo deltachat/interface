@@ -12,7 +12,9 @@ Desktop account. You need
 - an E-Mail address
 - Delta Chat Desktop version >= 0.840.0
 
-**Charlie** is the second account of Alice.
+**Charlie** is the second account of Alice. The Charlie points are cool if you
+have the time and a third E-Mail address for testing. If it's too much of a
+hassle, don't worry about it and leave out those points.
 
 ## Tests
 
@@ -46,12 +48,17 @@ Desktop account. You need
     - [ ] Can Alice import it in another device?
     - [ ] Alice sends an Autocrypt Setup Message from another client: can Alice import it in Android?
 - Disable: Settings -> Advanced -> Prefer end-to-end encryption
-    - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=mutual; " header?
+    - [ ] If you send out a mail afterwards, does it contain an "Autocrypt: prefer-encrypt=nopreference; " header?
+- Enable: Settings -> Advanced -> Prefer end-to-end encryption
+    - [ ] If you send out a mail afterwards, does it contain the "Autocrypt: prefer-encrypt=mutual; " header again?
 - Backup & Restore
     - [ ] Export Backup: Settings -> Chats & Media -> Backup
     - Delete account: Phone Settings -> Apps -> DeltaChat -> Clear Data
     - Open App again, tap restore from backup
     - [ ] Is everything still there?
+
+### Optional: Charlie
+
 - [ ] Alice logs out
 - [ ] Charlie logs in on Alice's device
 - [ ] Bob writes a message to Charlie
@@ -61,8 +68,7 @@ Desktop account. You need
     - [ ] Charlie finds the message in her Contact request and clicks "Never" this time
     - [ ] Bob sends Charlie another message, but Charlie doesn't receive it
 - [ ] Alice archives her Chat with Bob; she doesn't see it anymore
-- [ ] Bob writes her a mail, Alice doesn't receive it
-- [ ] Alice unarchives her Chat with Bob - the chat reappears, the mail is there
+- [ ] Bob writes her a mail, Alice receives it nonetheless, the chat is unarchived automatically
 
 ### Out of scope
 
