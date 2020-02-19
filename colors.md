@@ -15,7 +15,8 @@
 - chat name: bold
 - text excerpt: normal and smaller
 - delivery information: right aligned
-- deaddrop background: `#cccccc`
+- deaddrop and pinned chats background:
+  light-mode: `#eeeeee` or `#ebebec`, dark-mode: #222222
 
 ## chat
 
