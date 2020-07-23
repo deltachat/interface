@@ -37,6 +37,11 @@ see https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-sy
 ### `:emoji:`
 - could also be used for custom dc emojis
 
+### labeled links: `[Name](url)` links
+When implementing this make sure to show the user the hidden url in a confirmation dialog to make scamming harder.
+Also show the url as encode punycode to make punycode attacks useless.
+Optionaly a client can implement a system to trust an domain (an "don't ask a again for links on this domain" checkbox in the confirmation dialog)
+
 ## Future:
 
 ### `mailto:email@address.example.com`
@@ -49,13 +54,22 @@ see https://support.delta.chat/t/custom-deltachat-url-scheme/346
 ### Mentions `@username`
 Clickable. (could get replaced with an user hash/email/id on send/on recieve so that it's still valid on name change.)
 
+On sending/recieving this is tranformed into an internal representation:
+
+Implementation idea:
+1. user types @Displayname and at best gets autocompletion while typing the url
+2. on sending the username is converted to the transmition format (special format that contains the email address as id)
+3. on recieving/storing the message inside of the database this format is converted again to contain the local contact id to allow for future email address migration/rotation.
+(4.) on forwarding/sharing as chat history the id representation needs to be converted from the contact id format to the transmition format again
+
+see discords mention code for reference/inspiration https://blog.discordapp.com/how-discord-renders-rich-messages-on-the-android-app-67b0e5d56fbe
+
 ### $[inline TeX]$ $$[Tex displayed in block(new line)]$$
 for sharing math/physics equations in LaTeX format.
 see https://support.delta.chat/t/latex-code-in-deltachat/558
 
 ## Things that will not be suported:
 - Inline HTML
-- `[Name](url)` links
 - underline - can be confused with links
 
 ## other / internal
