@@ -11,8 +11,7 @@ Deltachat is going to support the following subset of markdown:
 
 ### `https://delta.chat` - Urls
 
-Make URLs clickable, but **don't** support the Link syntax `[Name](url)`
-because that could be used for misleading and as such be used in scams.
+Make URLs clickable.
 
 ### `<http://example.org>`  - Urls
 
