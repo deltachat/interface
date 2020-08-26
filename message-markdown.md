@@ -42,6 +42,10 @@ When implementing this make sure to show the user the hidden url in a confirmati
 Also show the url as encode punycode to make punycode attacks useless.
 Optionaly a client can implement a system to trust an domain (an "don't ask a again for links on this domain" checkbox in the confirmation dialog)
 
+### Bot `/commands`
+
+On click the command gets prefilled as the draft so it can be easialy send.
+
 ## Future:
 
 ### `mailto:email@address.example.com`
