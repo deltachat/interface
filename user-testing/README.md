@@ -1,5 +1,9 @@
 # Testing Checklist
 
+## Testing individual features
+
+[mailto links (mainly for Android currently)](./mailto-links.md)
+
 ## Preparation
 
 **Alice** will be the tester. You need 
