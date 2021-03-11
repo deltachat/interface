@@ -51,7 +51,8 @@ A bit modified from the common syntax to allow one liners.
 Also get displayed with an monospace font (a side effect of this is that it allows to display small ascii art).
 The code **highlighting** is **optional** as implementation (time)cost
 may not be worth the small gain.
-The `language` definition should be parsed separately and omitted in this case.
+The `language` definition should be parsed separately and omitted in this case (for oneline code blocks, because we cant differentiate it from content in this case).
+So the `language` definition is only detected if there is an linebreak following it.
 
 see https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting
 
@@ -63,8 +64,7 @@ echo hi
 <pre>```
 echo hi
 ```</pre>
-<pre>```sh echo hi```</pre>
-<pre>``` echo hi```</pre>
+<pre>```echo hi```</pre>
 
 
 ### `:emoji:`
