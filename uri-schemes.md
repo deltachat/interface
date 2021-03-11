@@ -3,7 +3,7 @@
 Currently URI schemes are mainly supported by the app-internal QRcode scanner, at this time only `openpgp4fpr` (used for securejoin) is also registered as uri scheme handler on all platforms ([android](https://github.com/deltachat/deltachat-android), [ios](https://github.com/deltachat/deltachat-ios) and [desktop](https://github.com/deltachat/deltachat-desktop))
 
 - related forum topic: https://support.delta.chat/t/custom-deltachat-url-uri-scheme/346
-- core sourcecode that handles uri schemes: https://github.com/deltachat/deltachat-core-rust/blob/master/src/qr.rs
+- core sourcecode that handles uri schemes: https://github.com/deltachat/deltachat-core-rust/blob/master/src/qr.rs and https://github.com/deltachat/deltachat-core-rust/blob/master/src/securejoin/qrinvite.rs
 
 ## **chat.delta**
 
@@ -51,6 +51,9 @@ OPENPGP4FPR:FINGERPRINT#a=ADDR&n=NAME&i=INVITENUMBER&s=AUTH
 OPENPGP4FPR:FINGERPRINT#a=ADDR&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
 ```
 
+The fields `a`, `g` and `n` are URL encoded.
+`i` & `s` are 66 random bits endcoded as base-64.
+
 #### Examples
 
 verify contact
@@ -65,7 +68,7 @@ join regular group
 OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=groupname2&x=iNekF7uW509&i=xW0ZAcLUQDf&s=OYV-PWe63Vv
 ```
 
-join verified/protected group
+join verified/protected group (same format as join regular group)
 
 ```
 OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=groupname&x=ylTH55NJF24&i=PpDNY9sRkh-&s=F8di8fNDToQ
