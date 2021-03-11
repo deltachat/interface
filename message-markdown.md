@@ -46,7 +46,7 @@ In contrast to bold, italics and strikethrough the content of inline-code can co
 Similar to `inline-code` but not inline and it may supports code highlighting.
 ```
 
-` ```[lang?] [content]``` `
+` ```[lang?] [content]``` ` (square brakets symbolize being a variable and are not used when using code blocks)
 A bit modified from the common syntax to allow one liners.
 Also get displayed with an monospace font (a side effect of this is that it allows to display small ascii art).
 The code **highlighting** is **optional** as implementation (time)cost
@@ -54,6 +54,18 @@ may not be worth the small gain.
 The `language` definition should be parsed separately and omitted in this case.
 
 see https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code-and-syntax-highlighting
+
+examples:
+
+<pre>```sh
+echo hi
+```</pre>
+<pre>```
+echo hi
+```</pre>
+<pre>```sh echo hi```</pre>
+<pre>``` echo hi```</pre>
+
 
 ### `:emoji:`
 
