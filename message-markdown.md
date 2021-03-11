@@ -117,6 +117,10 @@ see discords mention code for reference/inspiration https://blog.discordapp.com/
 for sharing math/physics equations in LaTeX format.
 see https://support.delta.chat/t/latex-code-in-deltachat/558
 
+### Telephone numbers (idea)
+- format: +[country] [area] [number] (again square brakets indicate variables)
+make them clickable similar to `tel:` links
+
 ## Things that will not be suported:
 
 - Inline HTML
