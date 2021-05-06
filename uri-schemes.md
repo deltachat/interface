@@ -13,7 +13,7 @@ Generic deltachat scheme, currently used by android as callback url for the oaut
 | Scheme | `chat.delta` |
 | Used for | oauth2 Login (only android currently) |
 | Related Terms\* | - |
-| Availible on | iOS (defined, but not used yet), android |
+| Available on | iOS (defined, but not used yet), android |
 | Handled by the core| No|
 | Other apps using it | none, only DeltaChat |
 | Notes | Only used as scheme currently, not in qr codes |
@@ -40,7 +40,7 @@ https://github.com/deltachat/deltachat-android/blob/8d9c02dd7a2be33fe588e0b9469b
 | Scheme                  | `OPENPGP4FPR:`                  |
 | Used for                | Verify Contact and Join a group |
 | Related Terms\*         | Securejoin                      |
-| Availible on            | iOS, android, desktop           |
+| Available on            | iOS, android, desktop           |
 | Decoded by the core\*\* | Yes                             |
 | Other apps using it     | <li>OpenKeychain(android)</li>  |
 
@@ -81,7 +81,7 @@ OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=
 | Scheme                   | `DCACCOUNT_SCHEME:`                                                                                                                            |
 | Used for                 | Account setup                                                                                                                                  |
 | Related Terms\*          | Burner Accounts                                                                                                                                |
-| Availible on             | iOS (only QR), android(only QR), desktop (only QR)                                                                                             |
+| Available on             | iOS (only QR), android(only QR), desktop (only QR)                                                                                             |
 | Decoded by the core \*\* | Yes, though desktop currently uses its own implementation [deltachat-desktop#1961](https://github.com/deltachat/deltachat-desktop/issues/1961) |
 | Other apps using it      | none, only DeltaChat                                                                                                                           |
 
@@ -103,7 +103,7 @@ We plan to add an option to specify the credentails in the url in the future.
 | Scheme                   | `DCWEBRTC:`                                              |
 | Used for                 | Setting the `WebrtcInstance` config value from an qrcode |
 | Related Terms\*          | webrtc_instance                                          |
-| Availible on             | ? [TODO]                                                 |
+| Available on             | ? [TODO]                                                 |
 | Decoded by the core \*\* | Yes                                                      |
 | Other apps using it      | none, only DeltaChat                                     |
 
@@ -144,7 +144,7 @@ Usable as share to deltachat.
 | Scheme              | `mailto:`                                                  |
 | Used for            | sharing to deltachat, creating a contact                   |
 | Related Terms\*     | -                                                          |
-| Availible on        | android, [TODO do desktop and ios support it?]             |
+| Available on        | android, [TODO do desktop and ios support it?]             |
 | Decoded by the core | Yes, partially (only extracts address and creates contact) |
 | Other apps using it | most other email clients                                   |
 
@@ -165,7 +165,7 @@ similar to [`mailto:`](#MAILTO)
 | Scheme              | `SMTP:`                                                    |
 | Used for            | sharing to deltachat, creating a contact                   |
 | Related Terms\*     | -                                                          |
-| Availible on        | ? [TODO]                                                   |
+| Available on        | ? [TODO]                                                   |
 | Decoded by the core | Yes, partially (only extracts address and creates contact) |
 | Other apps using it | ?                                                          |
 
@@ -184,7 +184,7 @@ similar to [`mailto:`](#MAILTO)
 | Scheme              | `MATMSG:`                                                  |
 | Used for            | sharing to deltachat, creating a contact                   |
 | Related Terms\*     | -                                                          |
-| Availible on        | ? [TODO]                                                   |
+| Available on        | ? [TODO]                                                   |
 | Decoded by the core | Yes, partially (only extracts address and creates contact) |
 | Other apps using it | ?                                                          |
 
@@ -201,7 +201,7 @@ MATMSG:TO:[addr];SUB:[subject];BODY:[body];
 | Scheme              | `BEGIN:VCARD`       |
 | Used for            | importing a contact |
 | Related Terms\*     | vcard               |
-| Availible on        | ? [TODO]            |
+| Available on        | ? [TODO]            |
 | Decoded by the core | Yes                 |
 | Other apps using it | ?                   |
 
@@ -215,7 +215,7 @@ VCARD:BEGIN\nN:last name;first name;...;\nEMAIL;<type>:addr...;
 
 - `http://` & `https://` - to make the qr code scanner more complete and allow users to scan common qr codes.
 
-## Registered Handelers per Platform
+## Registered Handlers per Platform
 
 List of which schemes the app is registered to handle in the OS.
 When an scheme is reqistered as a handler
