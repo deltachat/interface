@@ -54,6 +54,8 @@ OPENPGP4FPR:FINGERPRINT#a=ADDR&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
 The fields `a`, `g` and `n` are URL encoded.
 `i` & `s` are 66 random bits endcoded as base-64.
 
+> Note: Everything after `#` is a Delta Chat extension
+
 #### Examples
 
 verify contact
