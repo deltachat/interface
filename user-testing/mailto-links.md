@@ -17,7 +17,7 @@ Just click on all of these links and check if the result is the expected one:
 Sharing
 -------
 
-### https://github.com/deltachat/deltachat-android/pull/1770
+### Regression test for the issue fixed by [#1770](https://github.com/deltachat/deltachat-android/pull/1770)
 
 - Open Saved Messages chat, could be any other chat too
 - Go to another app and share to DC
@@ -27,7 +27,7 @@ draft to the db)
 - Open DC again from the "Recent apps".
 - Chack that your draft is still there
 
-### https://github.com/deltachat/deltachat-android/issues/2032
+### Regression test for [issue 2032](https://github.com/deltachat/deltachat-android/issues/2032)
 
 - Share an image from another app to Delta Chat
 - Select a chat
