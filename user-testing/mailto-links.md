@@ -21,7 +21,7 @@ Sharing
 
 - Open Saved Messages chat (could be any other chat too)
 - Go to another app and share some text to DC
-- In DC select Saved Messages. Edit the shared text if you like (but don't put too much effort in it as the draft will vanish :) ). _Don't_ hit the Send button.
+- In DC select Saved Messages. Edit the shared text if you like. _Don't_ hit the Send button.
 - Leave DC
 - Open DC again from the "Recent apps"
 - Check that your draft is still there
