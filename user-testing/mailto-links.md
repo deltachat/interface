@@ -1,5 +1,8 @@
-Testing mailto links
-====================
+Testing Mailto Links & Sharing
+==============================
+
+Mailto links
+------------
 
 Just click on all of these links and check if the result is the expected one:
 
@@ -10,3 +13,24 @@ Just click on all of these links and check if the result is the expected one:
 * [HTML encoding](mailto:%20info@example.org) - should open a chat with `info@example.org`
 * [more HTML encoding](mailto:simplebot@example.org?body=!web%20https%3A%2F%2Fduckduckgo.com%2Flite%3Fq%3Dduck%2520it) - should open a chat with `simplebot@example.org`, draft `!web https://duckduckgo.com/lite?q=duck%20it`
 * [no email, just subject&body](mailto:?subject=bla&body=blub) - this should let you choose a chat and create a draft `bla` \<newline\> `blub` there
+
+Sharing
+-------
+
+### https://github.com/deltachat/deltachat-android/pull/1770
+
+- Open Saved Messages chat, could be any other chat too
+- Go to another app and share to DC
+- In DC select Saved Messages. Now a draft with the share text is created. Edit the text if you like (but don't put too much effort in it as the draft will vanish :) ). _Don't_ hit the Send button.
+- Leave DC. (The second ConversationActivity will correctly save its
+draft to the db)
+- Open DC again from the "Recent apps".
+- Chack that your draft is still there
+
+### https://github.com/deltachat/deltachat-android/issues/2032
+
+- Share an image from another app to Delta Chat
+- Select a chat
+- Tap on the pen to edit the image
+- edit the image and hit confirm
+- Check that your edit is still there
