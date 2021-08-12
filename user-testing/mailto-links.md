@@ -19,12 +19,11 @@ Sharing
 
 ### Regression test for the issue fixed by [#1770](https://github.com/deltachat/deltachat-android/pull/1770)
 
-- Open Saved Messages chat, could be any other chat too
-- Go to another app and share to DC
-- In DC select Saved Messages. Now a draft with the share text is created. Edit the text if you like (but don't put too much effort in it as the draft will vanish :) ). _Don't_ hit the Send button.
-- Leave DC. (The second ConversationActivity will correctly save its
-draft to the db)
-- Open DC again from the "Recent apps".
+- Open Saved Messages chat (could be any other chat too)
+- Go to another app and share some text to DC
+- In DC select Saved Messages. Edit the shared text if you like (but don't put too much effort in it as the draft will vanish :) ). _Don't_ hit the Send button.
+- Leave DC
+- Open DC again from the "Recent apps"
 - Check that your draft is still there
 
 ### Regression test for [issue 2032](https://github.com/deltachat/deltachat-android/issues/2032)
