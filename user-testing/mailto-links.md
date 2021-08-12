@@ -25,7 +25,7 @@ Sharing
 - Leave DC. (The second ConversationActivity will correctly save its
 draft to the db)
 - Open DC again from the "Recent apps".
-- Chack that your draft is still there
+- Check that your draft is still there
 
 ### Regression test for [issue 2032](https://github.com/deltachat/deltachat-android/issues/2032)
 
