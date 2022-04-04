@@ -26,8 +26,9 @@
 - other-bubble background: #ffffff
 - other-bubble time/date/delivery: #808080
 
-- date/system-messages: #000000 with 0x44 = 27% alpha
-  this transparancy is also nice for image-overlays
+- date/system-messages background: #55444444
+  this transparancy is also nice for image-overlays,
+  plain white is recommended as foreground color there
 
 - send button: round, background `#415e6b`,
   foreground icon from `icons/ic_send*`
