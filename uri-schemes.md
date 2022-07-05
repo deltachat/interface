@@ -76,16 +76,16 @@ join verified/protected group (same format as join regular group)
 OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=groupname&x=ylTH55NJF24&i=PpDNY9sRkh-&s=F8di8fNDToQ
 ```
 
-## **DCACCOUNT_SCHEME** <a name="DCACCOUNT_SCHEME"></a>
+## **DCACCOUNT** <a name="DCACCOUNT"></a>
 
-|                          |                                                                                                                                                |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Scheme                   | `DCACCOUNT_SCHEME:`                                                                                                                            |
-| Used for                 | Account setup                                                                                                                                  |
-| Related Terms\*          | Burner Accounts                                                                                                                                |
-| Available on             | iOS (only QR), android(only QR), desktop (only QR)                                                                                             |
-| Decoded by the core \*\* | Yes, though desktop currently uses its own implementation [deltachat-desktop#1961](https://github.com/deltachat/deltachat-desktop/issues/1961) |
-| Other apps using it      | none, only DeltaChat                                                                                                                           |
+|                          |                                                    |
+| ------------------------ | -------------------------------------------------- |
+| Scheme                   | `DCACCOUNT:`                                       |
+| Used for                 | Account setup                                      |
+| Related Terms\*          | Burner Accounts                                    |
+| Available on             | iOS (only QR), android(only QR), desktop (only QR) |
+| Decoded by the core \*\* | Yes                                                |
+| Other apps using it      | none, only DeltaChat                               |
 
 ### Syntax
 
@@ -96,7 +96,33 @@ see the [mailadm](https://github.com/deltachat/mailadm) project for more details
 DCACCOUNT:https://example.org/new_email?t=1w_7wDjgjelxeX884x96v3
 ```
 
-We plan to add an option to specify the credentails in the url in the future.
+#### The http endpoint needs the following api:
+
+##### On Success
+
+HTTP Status code 200
+
+```ts
+{
+    email: string,
+    password: string
+}
+```
+
+json object can have other properties too, but currently they are ignored by core.
+
+##### On Error
+
+HTTP Status code: NOT 2XX, idealy the 4XX if it's user error and 5XX if it's the servers fault
+
+```ts
+{
+    // The user facing error string, should explain what failed.
+    error: string,
+}
+```
+
+json object can have other properties too, but currently they are ignored by core.
 
 ## **DCWEBRTC**
 
