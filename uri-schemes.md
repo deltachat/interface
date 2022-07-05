@@ -140,9 +140,9 @@ json object can have other properties too, but currently they are ignored by cor
 ### Syntax
 
 ```
-DCLOGIN:minVersion/CredentialsJSON
+DCLOGIN:CredentialsJSON#minVersion
 # example:
-DCLOGIN:1/{"email":"me@example.com","password":""}
+DCLOGIN:{"email":"me@example.com","password":""}#1
 ```
 
 #### `minVersion`
@@ -153,6 +153,45 @@ Used for breaking new versions that add new **required** properties, basically d
 The version number only increases on incompatible changes (changes to required properties).
 
 It is outside the JSON, because we might want to use a more compact format than JSON in the future, like CBOR, BSON, msgpack or another binary format (see https://www.rfc-editor.org/rfc/rfc8949.html#section-appendix.e for some possible candidates).
+
+Another option for a posible future format could be URI based, like suggested here:
+`dclogin://password:name@example.com?smtpserver=loginname:password@smtp.example.com:1234&imapserver=loginname:password@imap.example.com:5678&smtpsecurity=ssltls&imapsecurity=ssltls&authmethod=auto&certchecks=auto` https://support.delta.chat/t/allow-users-to-generate-qr-codes-to-simplify-the-login-process/1406
+
+#### `CredentialsJSON`
+
+Version 1:
+```ts
+const enum CertificateChecks {
+  /**
+   * Same as `AcceptInvalidCertificates` unless overridden by
+   * `strict_tls` setting in provider database.
+   */
+  Automatic = 0,
+  Strict = 1,
+  AcceptInvalidCertificates = 3,
+}
+
+interface DC_LOGIN {
+  email: string;
+  password: string;
+  advanced_imap?: {
+    host?: string;
+    port?: number;
+    username?: string;
+    password?: string;
+    security?: "ssl" | "default";
+    certificate_checks: CertificateChecks;
+  };
+  advanced_smpt?: {
+    host?: string;
+    port?: number;
+    username?: string;
+    password?: string;
+    security?: "ssl" | "starttls" | "plain";
+    certificate_checks: CertificateChecks;
+  };
+}
+```
 
 ## **DCWEBRTC**
 
