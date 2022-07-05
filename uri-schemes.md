@@ -96,6 +96,8 @@ see the [mailadm](https://github.com/deltachat/mailadm) project for more details
 DCACCOUNT:https://example.org/new_email?t=1w_7wDjgjelxeX884x96v3
 ```
 
+You may want to use [`DCLOGIN`](#DCLOGIN) instead, if you want a qr code containing login information for a single account.
+
 #### The http endpoint needs the following api:
 
 ##### On Success
@@ -123,6 +125,34 @@ HTTP Status code: NOT 2XX, idealy the 4XX if it's user error and 5XX if it's the
 ```
 
 json object can have other properties too, but currently they are ignored by core.
+
+## **DCLOGIN** <a name="DCLOGIN"></a>
+
+|                          |                       |
+| ------------------------ | --------------------- |
+| Scheme                   | `DCLOGIN:`            |
+| Used for                 | Account setup         |
+| Related Terms\*          | Account Login QR code |
+| Available on             | draft                 |
+| Decoded by the core \*\* | draft                 |
+| Other apps using it      | none, only DeltaChat  |
+
+### Syntax
+
+```
+DCLOGIN:minVersion/CredentialsJSON
+# example:
+DCLOGIN:1/{"email":"me@example.com","password":""}
+```
+
+#### `minVersion`
+
+Format version:
+Used for breaking new versions that add new **required** properties, basically deltachat checks for this and if it's newer than the version deltachat supports it prompts the user to update the app.
+
+The version number only increases on incompatible changes (changes to required properties).
+
+It is outside the JSON, because we might want to use a more compact format than JSON in the future, like CBOR, BSON, msgpack or another binary format (see https://www.rfc-editor.org/rfc/rfc8949.html#section-appendix.e for some possible candidates).
 
 ## **DCWEBRTC**
 
