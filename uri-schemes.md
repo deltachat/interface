@@ -167,14 +167,14 @@ DCWEBRTC:https://choosenname.my.webex.com/meet/me/$NOROOM
 
 Usable as share to deltachat.
 
-|                     |                                                            |
-| ------------------- | ---------------------------------------------------------- |
-| Scheme              | `mailto:`                                                  |
-| Used for            | sharing to deltachat, creating a contact                   |
-| Related Terms\*     | -                                                          |
-| Available on        | android, [TODO do desktop and ios support it?]             |
-| Decoded by the core | Yes, partially (only extracts address and creates contact) |
-| Other apps using it | most other email clients                                   |
+|                     |                                                              |
+| ------------------- | ------------------------------------------------------------ |
+| Scheme              | `mailto:`                                                    |
+| Used for            | sharing to deltachat, creating a contact                     |
+| Related Terms\*     | -                                                            |
+| Available on        | android, desktop (own decoding), [TODO does ios support it?] |
+| Decoded by the core | Yes, partially (only extracts address and creates contact)   |
+| Other apps using it | most other email clients                                     |
 
 ### Syntax
 
