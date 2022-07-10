@@ -140,10 +140,39 @@ json object can have other properties too, but currently they are ignored by cor
 ### Syntax
 
 ```
-DCLOGIN:CredentialsJSON#minVersion
-# example:
-DCLOGIN:{"email":"me@example.com","password":""}#1
+dclogin://user:password@host/?options
+dclogin://user:password@host?options
+dclogin:user:password@host/?options
+# example: (email: me@example.com, password: securePassword)
+dclogin://me:securePassword@example.com?v=1
+# example: (email: myself@example.com, password: 123456, insecure smtp at different server)
+dclogin://myself:123456@example.com?v=1&sh=mail.example.com&sc=3&ss=plain
 ```
+
+#### Options `?options`
+
+Format: URL Query parameters also known as GET variables (`varname=value` behind the question mark, chained/delimited by `&`)
+
+The query parameters contain advanced options and a version parameter.
+All advanced options are optional except for `v`, which is the only required option at this point.
+
+| short name | full name                 | description                                         | example               |
+| ---------- | ------------------------- | --------------------------------------------------- | --------------------- |
+| `v`        | `version`                 | defines the format version, more explanation below  | `v=1`                 |
+| ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
+| `ih`       | `imap_host`               | IMAP host                                           | `ih=imap.example.com` |
+| `ip`       | `imap_port`               | IMAP port                                           | `ip=993`              |
+| `iu`       | `imap_username`           | IMAP username                                       |                       |
+| `ipw`      | `imap_password`           | IMAP password                                       |                       |
+| `is`       | `imap_security`           | IMAP security: "`ssl`" or "`default`"               | `is=ssl`              |
+| `ic`       | `imap_certificate_checks` | IMAP certificate checks, see below for options      | `ic=1`                |
+| ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
+| `sh`       | `smtp_host`               | SMTP host                                           | `sh=mail.example.com` |
+| `sp`       | `smtp_port`               | SMTP port                                           | `sp=465`              |
+| `su`       | `smtp_username`           | SMTP username                                       |                       |
+| `spw`      | `smtp_password`           | SMTP password                                       |                       |
+| `ss`       | `smtp_security`           | SMTP security: "`ssl`", "`starttls`" or "`plain`"   | `ss=plain`            |
+| `sc`       | `smtp_certificate_checks` | SMTP certificate checks, see below for options      | `sc=3`                |
 
 #### `minVersion`
 
@@ -152,46 +181,32 @@ Used for breaking new versions that add new **required** properties, basically d
 
 The version number only increases on incompatible changes (changes to required properties).
 
-It is outside the JSON, because we might want to use a more compact format than JSON in the future, like CBOR, BSON, msgpack or another binary format (see https://www.rfc-editor.org/rfc/rfc8949.html#section-appendix.e for some possible candidates).
+#### `CertificateChecks`
 
-Another option for a posible future format could be URI based, like suggested here:
-`dclogin://password:name@example.com?smtpserver=loginname:password@smtp.example.com:1234&imapserver=loginname:password@imap.example.com:5678&smtpsecurity=ssltls&imapsecurity=ssltls&authmethod=auto&certchecks=auto` https://support.delta.chat/t/allow-users-to-generate-qr-codes-to-simplify-the-login-process/1406
+| code | name & description                                                                                               |
+| ---- | ---------------------------------------------------------------------------------------------------------------- |
+| 0    | `Automatic`, same as `AcceptInvalidCertificates` unless overridden by `strict_tls` setting in provider database. |
+| 1    | `Strict`                                                                                                         |
+| 3    | `AcceptInvalidCertificates`                                                                                      |
 
-#### `CredentialsJSON`
+#### Important information for using the `DCLOGIN:` scheme
 
-Version 1:
-```ts
-const enum CertificateChecks {
-  /**
-   * Same as `AcceptInvalidCertificates` unless overridden by
-   * `strict_tls` setting in provider database.
-   */
-  Automatic = 0,
-  Strict = 1,
-  AcceptInvalidCertificates = 3,
-}
+- There is a maximum length of how much data fits in side of a qr code (depending on the error correction level 1273 chars to 2953 chars)
+  - make sure to use the short names for advanced properties
+  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration) or [Autodiscover](<https://technet.microsoft.com/library/bb124251(v=exchg.150).aspx>)
+- **Every value** (username & password too) **needs to be URI encoded**:
+  - [`encodeURIComponent()` in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+- note that email username and password are in different order, than email: `username:password@host` vs. `username@host`
 
-interface DC_LOGIN {
-  email: string;
-  password: string;
-  advanced_imap?: {
-    host?: string;
-    port?: number;
-    username?: string;
-    password?: string;
-    security?: "ssl" | "default";
-    certificate_checks: CertificateChecks;
-  };
-  advanced_smpt?: {
-    host?: string;
-    port?: number;
-    username?: string;
-    password?: string;
-    security?: "ssl" | "starttls" | "plain";
-    certificate_checks: CertificateChecks;
-  };
-}
-```
+#### Implementation hints
+
+implementations should be somewhat tolerant:
+
+- both `dclogin:` and `dclogin://` should work
+- both short names and full names should be parsed for properties (though short names are preferred)
+- have a test for usename+extention@host cases
+- if version is bigger than whats implemented tell the user to update
+
 
 ## **DCWEBRTC**
 
