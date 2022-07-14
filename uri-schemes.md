@@ -156,7 +156,7 @@ Format: URL Query parameters also known as GET variables (`varname=value` behind
 The query parameters contain advanced options and a version parameter.
 All advanced options are optional except for `v`, which is the only required option at this point.
 
-| short name | full name                 | description                                         | example               |
+| short name | stands for                | description                                         | example               |
 | ---------- | ------------------------- | --------------------------------------------------- | --------------------- |
 | `v`        | `version`                 | defines the format version, more explanation below  | `v=1`                 |
 | ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
@@ -203,10 +203,9 @@ The version number only increases on incompatible changes (changes to required p
 implementations should be somewhat tolerant:
 
 - both `dclogin:` and `dclogin://` should work
-- both short names and full names should be parsed for properties (though short names are preferred)
+- only implement short names (not the full names they stand for)
 - have a test for usename+extention@host cases
 - if version is bigger than whats implemented tell the user to update
-
 
 ## **DCWEBRTC**
 
