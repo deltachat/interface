@@ -192,7 +192,7 @@ The version number only increases on incompatible changes (changes to required p
 #### Important information for using the `DCLOGIN:` scheme
 
 - There is a maximum length of how much data fits in side of a qr code (depending on the error correction level 1273 chars to 2953 chars)
-  - make sure to use the short names for advanced properties
+  - only use the short names for advanced properties
   - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration) or [Autodiscover](<https://technet.microsoft.com/library/bb124251(v=exchg.150).aspx>)
 - **Every value** (username & password too) **needs to be URI encoded**:
   - [`encodeURIComponent()` in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
