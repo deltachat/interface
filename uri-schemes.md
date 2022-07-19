@@ -140,13 +140,13 @@ json object can have other properties too, but currently they are ignored by cor
 ### Syntax
 
 ```
-dclogin://user:password@host/?options
-dclogin://user:password@host?options
-dclogin:user:password@host/?options
+dclogin://user@host/?p=password&v=1[&options]
 # example: (email: me@example.com, password: securePassword)
-dclogin://me:securePassword@example.com?v=1
+dclogin://me@example.com?p=securePassword&v=1
+# example: (email: myself@example.com, password: url/Encoded\@passw@rd)
+dclogin://myself@example.com?p=url%2FEncoded%5C%40passw%40rd&v=1
 # example: (email: myself@example.com, password: 123456, insecure smtp at different server)
-dclogin://myself:123456@example.com?v=1&sh=mail.example.com&sc=3&ss=plain
+dclogin://myself@example.com?p=123456&v=1&sh=mail.example.com&sc=3&ss=plain
 ```
 
 #### Options `?options`
@@ -154,17 +154,19 @@ dclogin://myself:123456@example.com?v=1&sh=mail.example.com&sc=3&ss=plain
 Format: URL Query parameters also known as GET variables (`varname=value` behind the question mark, chained/delimited by `&`)
 
 The query parameters contain advanced options and a version parameter.
-All advanced options are optional except for `v`, which is the only required option at this point.
+All advanced options are optional except for `v` and `p`, which are the only required options at this point.
+(BTW: Later/Other versions in the future might specify a different authentication and thus `p` might become unnecessary in those formats.)
 
 | short name | stands for                | description                                         | example               |
 | ---------- | ------------------------- | --------------------------------------------------- | --------------------- |
 | `v`        | `version`                 | defines the format version, more explanation below  | `v=1`                 |
+| `p`        | `password`                | required in version 1, password of the account      |                       |
 | ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
 | `ih`       | `imap_host`               | IMAP host                                           | `ih=imap.example.com` |
 | `ip`       | `imap_port`               | IMAP port                                           | `ip=993`              |
 | `iu`       | `imap_username`           | IMAP username                                       |                       |
 | `ipw`      | `imap_password`           | IMAP password                                       |                       |
-| `is`       | `imap_security`           | IMAP security: "`ssl`" or "`default`"               | `is=ssl`              |
+| `is`       | `imap_security`           | IMAP security: "`ssl`" or "`default`" or "`plain`"  | `is=ssl`              |
 | `ic`       | `imap_certificate_checks` | IMAP certificate checks, see below for options      | `ic=1`                |
 | ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
 | `sh`       | `smtp_host`               | SMTP host                                           | `sh=mail.example.com` |
