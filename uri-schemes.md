@@ -140,6 +140,8 @@ json object can have other properties too, but currently they are ignored by cor
 ### Syntax
 
 ```
+dclogin:user@host?p=password&v=1[&options]
+dclogin:user@host/?p=password&v=1[&options]
 dclogin://user@host/?p=password&v=1[&options]
 # example: (email: me@example.com, password: securePassword)
 dclogin://me@example.com?p=securePassword&v=1
