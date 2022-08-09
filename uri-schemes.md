@@ -178,7 +178,7 @@ All advanced options are optional except for `v` and `p`, which are the only req
 | `ss`       | `smtp_security`           | SMTP security: "`ssl`", "`starttls`" or "`plain`"   | `ss=plain`            |
 | `sc`       | `smtp_certificate_checks` | SMTP certificate checks, see below for options      | `sc=3`                |
 
-#### `minVersion`
+#### format version
 
 Format version:
 Used for breaking new versions that add new **required** properties, basically deltachat checks for this and if it's newer than the version deltachat supports it prompts the user to update the app.
@@ -197,19 +197,18 @@ The version number only increases on incompatible changes (changes to required p
 
 - There is a maximum length of how much data fits in side of a qr code (depending on the error correction level 1273 chars to 2953 chars)
   - only use the short names for advanced properties
-  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration) or [Autodiscover](<https://technet.microsoft.com/library/bb124251(v=exchg.150).aspx>)
+  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration)
 - **Every value** (username & password too) **needs to be URI encoded**:
   - [`encodeURIComponent()` in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
-- note that email username and password are in different order, than email: `username:password@host` vs. `username@host`
 
 #### Implementation hints
 
 implementations should be somewhat tolerant:
 
 - both `dclogin:` and `dclogin://` should work
-- only implement short names (not the full names they stand for)
-- have a test for usename+extention@host cases
-- if version is bigger than whats implemented tell the user to update
+- **only** implement short names (not the full names they stand for)
+- have a test for usename+extension@host cases
+- if version number is higher than what is implemented, tell the user to update
 
 ## **DCWEBRTC**
 
