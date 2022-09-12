@@ -217,7 +217,7 @@ The version number only increases on incompatible changes (changes to required p
 
 implementations should be somewhat tolerant:
 
-- both `dclogin:` and `dclogin://` should work
+- both `dclogin:` and `dclogin://` should work (though only `dclogin://` is technically correct)
 - **only** implement short names (not the full names they stand for)
 - have a test for usename+extension@host cases
 - if version number is higher than what is implemented, tell the user to update
