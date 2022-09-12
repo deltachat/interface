@@ -139,9 +139,21 @@ json object can have other properties too, but currently they are ignored by cor
 
 ### Syntax
 
+The generic URI schema is:
+
+URI = scheme ":" ["//" authority] path ["?" query] ["#" fragment]
+authority = [userinfo "@"] host [":" port]
+
+For DCLOGIN this means:
+- *scheme* is always dclogin
+- There must be an *authority* section
+  - The *userinfo* part is required.
+- The *path* may be omitted or be a single `/`.
+- The fragment must be omitted.
+- The query parameters are described down below.
+
+Examples:
 ```
-dclogin:user@host?p=password&v=1[&options]
-dclogin:user@host/?p=password&v=1[&options]
 dclogin://user@host/?p=password&v=1[&options]
 # example: (email: me@example.com, password: securePassword)
 dclogin://me@example.com?p=securePassword&v=1
