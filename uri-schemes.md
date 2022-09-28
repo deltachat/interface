@@ -96,6 +96,8 @@ see the [mailadm](https://github.com/deltachat/mailadm) project for more details
 DCACCOUNT:https://example.org/new_email?t=1w_7wDjgjelxeX884x96v3
 ```
 
+You may want to use [`DCLOGIN`](#DCLOGIN) instead, if you want a qr code containing login information for a single account.
+
 #### The http endpoint needs the following api:
 
 ##### On Success
@@ -123,6 +125,102 @@ HTTP Status code: NOT 2XX, idealy the 4XX if it's user error and 5XX if it's the
 ```
 
 json object can have other properties too, but currently they are ignored by core.
+
+## **DCLOGIN** <a name="DCLOGIN"></a>
+
+|                          |                       |
+| ------------------------ | --------------------- |
+| Scheme                   | `DCLOGIN:`            |
+| Used for                 | Account setup         |
+| Related Terms\*          | Account Login QR code |
+| Available on             | draft                 |
+| Decoded by the core \*\* | draft                 |
+| Other apps using it      | none, only DeltaChat  |
+
+### Syntax
+
+The generic URI schema is:
+
+URI = scheme ":" ["//" authority] path ["?" query] ["#" fragment]
+authority = [userinfo "@"] host [":" port]
+
+For DCLOGIN this means:
+- *scheme* is always dclogin
+- There must be an *authority* section
+  - The *userinfo* part is required.
+- The *path* may be omitted or be a single `/`.
+- The fragment must be omitted.
+- The query parameters are described down below.
+
+Examples:
+```
+dclogin://user@host/?p=password&v=1[&options]
+# example: (email: me@example.com, password: securePassword)
+dclogin://me@example.com?p=securePassword&v=1
+# example: (email: myself@example.com, password: url/Encoded\@passw@rd)
+dclogin://myself@example.com?p=url%2FEncoded%5C%40passw%40rd&v=1
+# example: (email: myself@example.com, password: 123456, insecure smtp at different server)
+dclogin://myself@example.com?p=123456&v=1&sh=mail.example.com&sc=3&ss=plain
+```
+
+#### Options `?options`
+
+Format: URL Query parameters also known as GET variables (`varname=value` behind the question mark, chained/delimited by `&`)
+
+The query parameters contain advanced options and a version parameter.
+All advanced options are optional except for `v` and `p`, which are the only required options at this point.
+(BTW: Later/Other versions in the future might specify a different authentication and thus `p` might become unnecessary in those formats.)
+
+| short name | stands for                | description                                         | example               |
+| ---------- | ------------------------- | --------------------------------------------------- | --------------------- |
+| `v`        | `version`                 | defines the format version, more explanation below  | `v=1`                 |
+| `p`        | `password`                | required in version 1, password of the account      |                       |
+| ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
+| `ih`       | `imap_host`               | IMAP host                                           | `ih=imap.example.com` |
+| `ip`       | `imap_port`               | IMAP port                                           | `ip=993`              |
+| `iu`       | `imap_username`           | IMAP username                                       |                       |
+| `ipw`      | `imap_password`           | IMAP password                                       |                       |
+| `is`       | `imap_security`           | IMAP security: "`ssl`" or "`default`" or "`plain`"  | `is=ssl`              |
+| `ic`       | `imap_certificate_checks` | IMAP certificate checks, see below for options      | `ic=1`                |
+| ---------- | ------------------------- | --------------------------------------------------- | ----------------      |
+| `sh`       | `smtp_host`               | SMTP host                                           | `sh=mail.example.com` |
+| `sp`       | `smtp_port`               | SMTP port                                           | `sp=465`              |
+| `su`       | `smtp_username`           | SMTP username                                       |                       |
+| `spw`      | `smtp_password`           | SMTP password                                       |                       |
+| `ss`       | `smtp_security`           | SMTP security: "`ssl`", "`starttls`" or "`plain`"   | `ss=plain`            |
+| `sc`       | `smtp_certificate_checks` | SMTP certificate checks, see below for options      | `sc=3`                |
+
+#### format version
+
+Format version:
+Used for breaking new versions that add new **required** properties, basically deltachat checks for this and if it's newer than the version deltachat supports it prompts the user to update the app.
+
+The version number only increases on incompatible changes (changes to required properties).
+
+#### `CertificateChecks`
+
+| code | name & description                                                                                               |
+| ---- | ---------------------------------------------------------------------------------------------------------------- |
+| 0    | `Automatic`, same as `AcceptInvalidCertificates` unless overridden by `strict_tls` setting in provider database. |
+| 1    | `Strict`                                                                                                         |
+| 3    | `AcceptInvalidCertificates`                                                                                      |
+
+#### Important information for using the `DCLOGIN:` scheme
+
+- There is a maximum length of how much data fits in side of a qr code (depending on the error correction level 1273 chars to 2953 chars)
+  - only use the short names for advanced properties
+  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration)
+- **Every value** (username & password too) **needs to be URI encoded**:
+  - [`encodeURIComponent()` in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+
+#### Implementation hints
+
+implementations should be somewhat tolerant:
+
+- both `dclogin:` and `dclogin://` should work (though only `dclogin://` is technically correct)
+- **only** implement short names (not the full names they stand for)
+- have a test for usename+extension@host cases
+- if version number is higher than what is implemented, tell the user to update
 
 ## **DCWEBRTC**
 
