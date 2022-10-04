@@ -33,6 +33,9 @@
 - send button: round, background `#415e6b`,
   foreground icon from `icons/ic_send*`
 
+## recently seen dot on avatars
+
+- #34c759 (green)
 
 ## delivery information
 
