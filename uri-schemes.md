@@ -261,6 +261,48 @@ service with no random roomname, webex in this case
 DCWEBRTC:https://choosenname.my.webex.com/meet/me/$NOROOM
 ```
 
+## **DCBACKUP**
+
+|                     |                                                              |
+| ------------------- | ------------------------------------------------------------ |
+| Scheme              | `DCBACKUP:`                                                  |
+| Used for            | transferring a backup to another deltachat device            |
+| Related Terms\*     | -                                                            |
+| Available on        | android, ios, desktop                                        |
+| Decoded by the core | Yes                                                          |
+| Other apps using it | No                                                           |
+
+### Syntax
+
+```
+DCBACKUP:data
+```
+
+The `data` itself contains an encoded `iroh::provider::Ticket`
+structure serialised using it's `Display` trait.  Ultimately that
+implementation is the reference but here the details:
+
+- The ticket itself consists of this struct:
+  ```
+  struct Ticket {
+      hash: [u8; 32],
+      peer: [u8; 32],
+      addrs: Vec<SocketAddr>,
+      token: [u8; 32],
+  }
+  ```
+- This ticket is serialised to bytes using
+  [postcard](https://postcard.jamesmunns.com/).
+- These bytes are encoded using Base64 URL SAFE without padding.
+
+#### Examples
+
+This shows what a ticket looks like in practice.
+
+```
+DCBACKUP:IA84ohZpKlLVQaIe0AEejanGo2CCKmAgMQJLIcmO4Kp5IFNwcau_-xuQ2AhMSVWmodA63wUY7YmhSDVQh6tuCE8WAQB_AAAB0SJh2W8_TB3azsiP88tJXNEi554F4M7Q_jTw2_EnMdvrvQ
+```
+
 ## **mailto** <a name="MAILTO"></a>
 
 Usable as share to deltachat.
