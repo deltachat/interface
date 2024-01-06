@@ -74,11 +74,3 @@ hassle, don't worry about it and leave out those points.
 - [ ] Alice archives her Chat with Bob; she doesn't see it anymore
 - [ ] Bob writes her a mail, Alice receives it nonetheless, the chat is unarchived automatically
 
-### Out of scope
-
-Creating verified groups is out of scope for a community tester, until the
-Desktop client can join verified groups.
-
-Things which are already tested by automated tests, and don't have any UI,
-don't need testing.
-
