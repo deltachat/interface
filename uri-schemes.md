@@ -55,6 +55,8 @@ The fields `a`, `g` and `n` are URL encoded.
 `i` & `s` are 66 random bits endcoded as base-64.
 
 > Note: Everything after `#` is a Delta Chat extension
+>
+> The `OPENPGP4FPR` scheme's data is also used for so called ["Invite Links"](https://github.com/deltachat/invite)
 
 #### Examples
 
