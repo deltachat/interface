@@ -56,7 +56,7 @@ The fields `a`, `g` and `n` are URL encoded.
 
 > Note: Everything after `#` is a Delta Chat extension
 >
-> The `OPENPGP4FPR` scheme's data is also used for so called ["Invite Links"](https://github.com/deltachat/invite)
+> The `OPENPGP4FPR` scheme's data is also used for so called ["Invite Links"](#I-DELTA-CHAT)
 
 #### Examples
 
@@ -77,6 +77,76 @@ join verified/protected group (same format as join regular group)
 ```
 OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=groupname&x=ylTH55NJF24&i=PpDNY9sRkh-&s=F8di8fNDToQ
 ```
+
+## Invite Links: https://i.delta.chat <a name="I-DELTA-CHAT"></a>
+
+|                         |                                                  |
+| ----------------------- | ------------------------------------------------ |
+| Universal link          | `https://i.delta.chat`                           |
+| Used for                | Verify Contact and Join a group                  |
+| Related Terms\*         | Securejoin, universal links                      |
+| Available on            | iOS, android, desktop (only QR and paste)        |
+| Decoded by the core\*\* | Yes                                              |
+| Other apps using it     | No, not possible without a pr to the invite repo |
+
+"Invite Links" are an alternative to scan each other's QR code to get in contact or to join groups.
+
+The existing [OPENPGP4FPR](#OPENPGP4FPR) links have 2 major problems:
+they are not usable by people who don't have Delta Chat installed
+and they are not linkified (and thus not shareable) on 3rd party platforms.
+
+The "Invite Links" solve these problems:
+
+- You can share them over any 3rd party platform.
+- If recipients taps the links, they are
+  either offered to install Delta Chat and tap an "Open Chat" link
+  or, depending on the platform, an installed Delta Chat opens directly without even going to the website.
+
+> Since the 1.44 releases the qr codes that you copy to clipboard have this format.
+
+### Syntax
+
+```
+https://i.delta.chat/#FINGERPRINT&a=ADDR&n=NAME&i=INVITENUMBER&s=AUTH
+https://i.delta.chat/#FINGERPRINT&a=ADDR&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
+```
+
+The syntax is the same as in [OPENPGP4FPR](#OPENPGP4FPR) with two differences:
+
+- `OPENPGP4FPR:` is replaced by `https://i.delta.chat/#`
+- The `#` that comes directly after the `FINGERPRINT` is replaced by an `&` character.
+  - This is to make browsers and operating systems handle the link correctly
+
+Note, that all data are added to the [URI Fragment](https://en.wikipedia.org/wiki/URI_fragment),
+by that, no user data is sent to the server.
+
+#### Examples
+
+get in contact / verify contact
+
+```
+https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40five.chat&n=&i=rd82URz8_ac&s=MFRLUHvIHlq
+```
+
+join regular group
+
+```
+https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40five.chat&g=groupname2&x=iNekF7uW509&i=xW0ZAcLUQDf&s=OYV-PWe63Vv
+```
+
+join verified/protected group (same format as join regular group)
+
+```
+https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40five.chat&g=groupname&x=ylTH55NJF24&i=PpDNY9sRkh-&s=F8di8fNDToQ
+```
+
+### Related Links
+
+- Sourcecode of the website `https://i.delta.chat`: <https://github.com/deltachat/invite/>
+- The file that tell apple which apps are allowed to handle this universal link: https://github.com/deltachat/invite/blob/main/.well-known/apple-app-site-association
+- Deeplinking on the different platforms
+  - Apple Universal Links: https://developer.apple.com/ios/universal-links/
+  - Android App Links: https://developer.android.com/training/app-links/
 
 ## **DCACCOUNT** <a name="DCACCOUNT"></a>
 
@@ -147,14 +217,16 @@ URI = scheme ":" ["//" authority] path ["?" query] ["#" fragment]
 authority = [userinfo "@"] host [":" port]
 
 For DCLOGIN this means:
-- *scheme* is always dclogin
-- There must be an *authority* section
-  - The *userinfo* part is required.
-- The *path* may be omitted or be a single `/`.
+
+- _scheme_ is always dclogin
+- There must be an _authority_ section
+  - The _userinfo_ part is required.
+- The _path_ may be omitted or be a single `/`.
 - The fragment must be omitted.
 - The query parameters are described down below.
 
 Examples:
+
 ```
 dclogin://user@host/?p=password&v=1[&options]
 # example: (email: me@example.com, password: securePassword)
@@ -265,14 +337,14 @@ DCWEBRTC:https://choosenname.my.webex.com/meet/me/$NOROOM
 
 ## **DCBACKUP**
 
-|                     |                                                              |
-| ------------------- | ------------------------------------------------------------ |
-| Scheme              | `DCBACKUP:`                                                  |
-| Used for            | transferring a backup to another deltachat device            |
-| Related Terms\*     | -                                                            |
-| Available on        | android, ios, desktop                                        |
-| Decoded by the core | Yes                                                          |
-| Other apps using it | No                                                           |
+|                     |                                                   |
+| ------------------- | ------------------------------------------------- |
+| Scheme              | `DCBACKUP:`                                       |
+| Used for            | transferring a backup to another deltachat device |
+| Related Terms\*     | -                                                 |
+| Available on        | android, ios, desktop                             |
+| Decoded by the core | Yes                                               |
+| Other apps using it | No                                                |
 
 ### Syntax
 
@@ -281,7 +353,7 @@ DCBACKUP:data
 ```
 
 The `data` itself contains an encoded `iroh::provider::Ticket`
-structure serialised using it's `Display` trait.  Ultimately that
+structure serialised using it's `Display` trait. Ultimately that
 implementation is the reference but here the details:
 
 - The ticket itself consists of this struct:
@@ -390,11 +462,11 @@ VCARD:BEGIN\nN:last name;first name;...;\nEMAIL;<type>:addr...;
 List of which schemes the app is registered to handle in the OS.
 When an scheme is reqistered as a handler
 
-| Platform | Schemes                                                                                                                      | Sources (and a keyword to look for when the line-numbers have changed)                                                                                                                                                                                                                                                                                                                               |
-| -------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| iOS      | [`mailto:`](#MAILTO)\*\*\*, `chat.delta`, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT) | [deltachat-ios/Info.plist](https://github.com/deltachat/deltachat-ios/blob/master/deltachat-ios/Info.plist#L28-L32) CFBundleURLSchemes                                                                                                                                                                                                                                                               |
-| android  | [`mailto:`](#MAILTO), `chat.delta`, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT)       | [AndroidManifest.xml]([https://github.com/deltachat/deltachat-android/blob/8d9c02dd7a2be33fe588e0b9469be56fb0435a62/AndroidManifest.xml](https://github.com/deltachat/deltachat-android/blob/master/AndroidManifest.xml)) search for `android:scheme`                                                                                                                                                                                                                                  |
-| desktop  | [`mailto:`](#MAILTO)\*\*\*, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT)               | [build/gen-electron-builder-config.js](https://github.com/deltachat/deltachat-desktop/blob/b7340a22349e3c11e2938ef0532732db8e12bd7a/build/gen-electron-builder-config.js#L21-L33) build['protocols'] <br /> [src/main/windows/main.ts#L61](https://github.com/deltachat/deltachat-desktop/blob/988bade7c44b17665f91d013e04d8a5a877c6889/src/main/windows/main.ts#L61) app.on('open-url', ...) <br /> |
+| Platform | Schemes                                                                                                                                                             | Sources (and a keyword to look for when the line-numbers have changed)                                                                                                                                                                                                                                                                                                                               |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| iOS      | [`mailto:`](#MAILTO)\*\*\*, `chat.delta`, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT), [https://i.delta.chat](#I-DELTA-CHAT) | [deltachat-ios/Info.plist](https://github.com/deltachat/deltachat-ios/blob/master/deltachat-ios/Info.plist#L28-L32) CFBundleURLSchemes                                                                                                                                                                                                                                                               |
+| android  | [`mailto:`](#MAILTO), `chat.delta`, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT), [https://i.delta.chat](#I-DELTA-CHAT)       | [AndroidManifest.xml](<[https://github.com/deltachat/deltachat-android/blob/8d9c02dd7a2be33fe588e0b9469be56fb0435a62/AndroidManifest.xml](https://github.com/deltachat/deltachat-android/blob/master/AndroidManifest.xml)>) search for `android:scheme`                                                                                                                                              |
+| desktop  | [`mailto:`](#MAILTO)\*\*\*, [`openpgp4fpr:`](#OPENPGP4FPR), [`dclogin:`](#DCLOGIN), [`dcaccount:`](#DCACCOUNT)                                                      | [build/gen-electron-builder-config.js](https://github.com/deltachat/deltachat-desktop/blob/b7340a22349e3c11e2938ef0532732db8e12bd7a/build/gen-electron-builder-config.js#L21-L33) build['protocols'] <br /> [src/main/windows/main.ts#L61](https://github.com/deltachat/deltachat-desktop/blob/988bade7c44b17665f91d013e04d8a5a877c6889/src/main/windows/main.ts#L61) app.on('open-url', ...) <br /> |
 
 Caveat: the flathub version has sometimes problems in the support of uri schemes see: https://github.com/flathub/chat.delta.desktop/issues/115
 
