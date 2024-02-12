@@ -91,7 +91,7 @@ OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&g=
 
 "Invite Links" are an alternative to scan each other's QR code to get in contact or to join groups.
 
-The existing [OPENPGP4FPR](#OPENPGP4FPR) links have 2 mayor problems:
+The existing [OPENPGP4FPR](#OPENPGP4FPR) links have 2 major problems:
 they are not usable by people who don't have Delta Chat installed
 and they are not linkified (and thus not shareable) on 3rd party platforms.
 
@@ -145,7 +145,7 @@ https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40fi
 - Sourcecode of the website `https://i.delta.chat`: <https://github.com/deltachat/invite/>
 - The file that tell apple which apps are allowed to handle this universal link: https://github.com/deltachat/invite/blob/main/.well-known/apple-app-site-association
 - Deeplinking on the different platforms
-  - Apple Univeral Links: https://developer.apple.com/ios/universal-links/
+  - Apple Universal Links: https://developer.apple.com/ios/universal-links/
   - Android App Links: https://developer.android.com/training/app-links/
 
 ## **DCACCOUNT** <a name="DCACCOUNT"></a>
