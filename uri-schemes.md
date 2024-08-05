@@ -273,6 +273,10 @@ The version number only increases on incompatible changes (changes to required p
 
 #### `CertificateChecks`
 
+New versions of Delta Chat do not have separate options for IMAP certificate checks and SMTP certificate checks.
+**For best compatibility both `ic` and `sc` must be always set to the same value.**
+`sc` is actually ignored by new Delta Chat and `ic` is used to configure both IMAP and SMTP certificate checks.
+
 | code | name & description                                                                                               |
 | ---- | ---------------------------------------------------------------------------------------------------------------- |
 | 0    | `Automatic`, same as `AcceptInvalidCertificates` unless overridden by `strict_tls` setting in provider database. |
