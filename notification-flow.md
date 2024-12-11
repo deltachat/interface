@@ -2,16 +2,18 @@
 
 ```
 
+// on incoming message / reaction / webxdc-mention ...
+
+
 if notifications_granted_by_system:
     if not profile_muted:
         if not chat_muted:
             DO_NOTIFY()
         else:
-            if is_reaction || is_reply_to_own || is_webxdc_mention:
+            if is_webxdc_mention || is_reaction || is_reply_to_own_message:
                 if is_group:
                     if mentions_enabled:
                         DO_NOTIFY()
-
 
 
 // in all other cases: do not notify
