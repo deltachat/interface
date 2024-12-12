@@ -10,7 +10,7 @@ if notifications_granted_by_system:
         if not chat_muted:
             DO_NOTIFY()
         else:
-            if is_webxdc_notify || is_reaction || is_reply_to_own_message:
+            if is_webxdc_notify || is_reaction_to_own_message || is_reply_to_own_message:
                 if is_group:
                     if mentions_enabled:
                         DO_NOTIFY()
