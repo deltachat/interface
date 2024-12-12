@@ -11,7 +11,7 @@ if notifications_granted_by_system:
             DO_NOTIFY()
         else:
             if is_webxdc_notify || is_reaction_to_own_message || is_reply_to_own_message:
-                if is_group:
+                if is_multiuser_chat
                     if mentions_enabled:
                         DO_NOTIFY()
 
