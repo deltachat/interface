@@ -457,6 +457,31 @@ MATMSG:TO:[addr];SUB:[subject];BODY:[body];
 VCARD:BEGIN\nN:last name;first name;...;\nEMAIL;<type>:addr...;
 ```
 
+## **Telegram Socks5 Proxy Codes** <a name="telegram-socks5-proxy">
+
+|                     |                                                              |
+| ------------------- | ------------------------------------------------------------ |
+| Scheme              | `https://t.me/socks`                                         |
+| Used for            | importing a proxy config                                     |
+| Available on        | adding a proxy url on all platforms (not as system handler)  |
+| Decoded by the core | Yes                                                          |
+| Other apps using it | Telegram                                                     |
+| Specification       | https://core.telegram.org/api/links#socks5-proxy-links       |
+
+### Syntax
+
+```
+https://t.me/socks?server=<ip>&port=<port>&user=<user>&pass=<pass>
+```
+
+### Examples
+
+```
+https://t.me/socks?server=foo&port=666
+https://t.me/socks?server=1.2.3.4
+https://t.me/socks?server=jau&user=Da&pass=x%26%25%24X
+```
+
 ## URI schemes that are qrcode reader only
 
 - `http://` & `https://` - to make the qr code scanner more complete and allow users to scan common qr codes.
