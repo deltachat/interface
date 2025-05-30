@@ -459,14 +459,14 @@ VCARD:BEGIN\nN:last name;first name;...;\nEMAIL;<type>:addr...;
 
 ## **Telegram Socks5 Proxy Codes** <a name="telegram-socks5-proxy">
 
-|                     |                                                        |
-| ------------------- | ------------------------------------------------------ |
-| Scheme              | `https://t.me/socks`                                   |
-| Used for            | importing a proxy config                               |
-| Available on        | ? [TODO]                                               |
-| Decoded by the core | Yes                                                    |
-| Other apps using it | Telegram                                               |
-| Specification       | https://core.telegram.org/api/links#socks5-proxy-links |
+|                     |                                                              |
+| ------------------- | ------------------------------------------------------------ |
+| Scheme              | `https://t.me/socks`                                         |
+| Used for            | importing a proxy config                                     |
+| Available on        | adding a proxy url on all platforms (not as system handler)  |
+| Decoded by the core | Yes                                                          |
+| Other apps using it | Telegram                                                     |
+| Specification       | https://core.telegram.org/api/links#socks5-proxy-links       |
 
 ### Syntax
 
