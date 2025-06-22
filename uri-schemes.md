@@ -205,8 +205,8 @@ json object can have other properties too, but currently they are ignored by cor
 | Scheme                   | `DCLOGIN:`            |
 | Used for                 | Account setup         |
 | Related Terms\*          | Account Login QR code |
-| Available on             | draft                 |
-| Decoded by the core \*\* | draft                 |
+| Available on             | android, ios, desktop, deltatouch |
+| Decoded by the core \*\* | YES                   |
 | Other apps using it      | none, only DeltaChat  |
 
 ### Syntax
