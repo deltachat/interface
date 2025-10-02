@@ -300,45 +300,6 @@ implementations should be somewhat tolerant:
 - have a test for usename+extension@host cases
 - if version number is higher than what is implemented, tell the user to update
 
-## **DCWEBRTC**
-
-|                          |                                                          |
-| ------------------------ | -------------------------------------------------------- |
-| Scheme                   | `DCWEBRTC:`                                              |
-| Used for                 | Setting the `WebrtcInstance` config value from an qrcode |
-| Related Terms\*          | webrtc_instance                                          |
-| Available on             | ? [TODO]                                                 |
-| Decoded by the core \*\* | Yes                                                      |
-| Other apps using it      | none, only DeltaChat                                     |
-
-### Syntax
-
-```
-DCWEBRTC:[address of video call service]
-```
-
-#### Variables:
-
-Here is a list of variables that can be used in the config value, these might not be updated in the future, so you should also check to current documentation if it doesn't work.
-
-- `$ROOM` gets replaced with a random string.
-- `$NOROOM` gets replcaed with an empty string
-- if no variable is set a random string is appended to the url
-
-#### Examples
-
-jitsi
-
-```
-DCWEBRTC:https://meet.jit.si/$ROOM
-```
-
-service with no random roomname, webex in this case
-
-```
-DCWEBRTC:https://choosenname.my.webex.com/meet/me/$NOROOM
-```
-
 ## **DCBACKUP**
 
 |                     |                                                   |
