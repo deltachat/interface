@@ -229,6 +229,7 @@ For DCLOGIN this means:
 - _scheme_ is always dclogin
 - There must be an _authority_ section
   - The _userinfo_ part is required.
+  - The _host_ is a domain name, but can also be an IP address, though note that the IP address needs to be delimited by square brackets (`test@[127.0.0.1]` or `test@[2001:0db8:85a3:0000:0000:8a2e:0370:7334]`).
 - The _path_ may be omitted or be a single `/`.
 - The fragment must be omitted.
 - The query parameters are described down below.
