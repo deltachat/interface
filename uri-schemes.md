@@ -1,6 +1,6 @@
 # Deltachat URI-Schemes
 
-Currently URI schemes are mainly supported by the app-internal QRcode scanner, at this time only `openpgp4fpr` (used for securejoin) is also registered as uri scheme handler on all platforms ([android](https://github.com/deltachat/deltachat-android), [ios](https://github.com/deltachat/deltachat-ios) and [desktop](https://github.com/deltachat/deltachat-desktop))
+Currently URI schemes are mainly supported by the app-internal QR code scanner, at this time only `openpgp4fpr` (used for securejoin) is also registered as uri scheme handler on all platforms ([android](https://github.com/deltachat/deltachat-android), [ios](https://github.com/deltachat/deltachat-ios) and [desktop](https://github.com/deltachat/deltachat-desktop))
 
 - related forum topic: https://support.delta.chat/t/custom-deltachat-url-uri-scheme/346
 - core sourcecode that handles uri schemes: https://github.com/deltachat/deltachat-core-rust/blob/master/src/qr.rs and https://github.com/deltachat/deltachat-core-rust/blob/master/src/securejoin/qrinvite.rs
@@ -296,7 +296,7 @@ New versions of Delta Chat do not have separate options for IMAP certificate che
 
 - There is a maximum length of how much data fits in side of a qr code (depending on the error correction level 1273 chars to 2953 chars)
   - only use the short names for advanced properties
-  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using either [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration)
+  - If working with long domains/password/usernames in advanced options, **consider creating a configuration file at the server instead** using [Autoconfigure](https://web.archive.org/web/20210402044801/https://developer.mozilla.org/en-US/docs/Mozilla/Thunderbird/Autoconfiguration)
 - **Every value** (username & password too) **needs to be URI encoded**:
   - [`encodeURIComponent()` in JS](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
 
@@ -459,7 +459,7 @@ https://t.me/socks?server=jau&user=Da&pass=x%26%25%24X
 ## Registered Handlers per Platform
 
 List of which schemes the app is registered to handle in the OS.
-When an scheme is reqistered as a handler
+When an scheme is registered as a handler
 
 | Platform | Schemes                                                                                                                                                             | Sources (and a keyword to look for when the line-numbers have changed)                                                                                                                                                                                                                                                                                                                               |
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -473,6 +473,6 @@ Caveat: the flathub version has sometimes problems in the support of uri schemes
 
 \* terms that are used in the project that are related to it. Sometimes there are multiple terms refering to the same thing, for example contact requests are still sometimes refered to as "dead drops".
 
-\*\* wether the core has logic to detect and decode it
+\*\* whether the core has logic to detect and decode it
 
 \*\*\* not usable yet, does not work out of the box on desktop and for iOS we need to request permission from apple
