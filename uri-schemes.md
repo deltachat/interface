@@ -47,17 +47,43 @@ https://github.com/deltachat/deltachat-android/blob/8d9c02dd7a2be33fe588e0b9469b
 ### Syntax
 
 ```
-OPENPGP4FPR:FINGERPRINT#a=ADDR&n=NAME&i=INVITENUMBER&s=AUTH
-OPENPGP4FPR:FINGERPRINT#a=ADDR&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
-OPENPGP4FPR:FINGERPRINT#a=ADDR&b=BROADCAST_NAME&x=BROADCAST_ID&j=INVITENUMBER&s=AUTH
+OPENPGP4FPR:FINGERPRINT#a=ADDR&r=ADDRS&n=NAME&i=INVITENUMBER&s=AUTH
+OPENPGP4FPR:FINGERPRINT#a=ADDR&r=ADDRS&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
+OPENPGP4FPR:FINGERPRINT#a=ADDR&r=ADDRS&b=BROADCAST_NAME&x=BROADCAST_ID&j=INVITENUMBER&s=AUTH
 ```
 
-The fields `a`, `g`, `b`, and `n` are URL encoded.
+The fields `a`, `g`, `b`, `n` and each address inside `r` are URL encoded.
 `i` & `s` are 66 random bits endcoded as base-64.
 
 > Note: Everything after `#` is a Delta Chat extension
 >
+> Clients ignore fields they do not know.
+> This is what allows new fields to be added without breaking older clients.
+>
 > The `OPENPGP4FPR` scheme's data is also used for so called ["Invite Links"](#I-DELTA-CHAT)
+
+#### The inviter's relay addresses: `a` and `r`
+
+A profile can use several relays and is then reachable
+under several relay addresses.
+The inviter's key advertises all of them,
+but the scanning side only learns the key during the Securejoin handshake,
+so the relay addresses have to be in the link as well.
+
+`a` holds a single relay address and is always present.
+`r` is optional and holds the inviter's remaining relay addresses,
+separated by a literal `,`.
+A client that knows `r` uses the union of `a` and `r`;
+a client that does not know `r` ignores it and uses `a` alone.
+
+At most 5 relay addresses are put into a link.
+That is the same limit that applies to the relay addresses advertised in the key,
+and it keeps the QR code comfortably scannable:
+a single-address invite link needs a
+[version 8 QR code](https://www.qrcode.com/en/about/version.html) (49x49 modules)
+at error correction level M,
+and five addresses take it to version 11 (61x61 modules),
+far below the version 40 maximum of 177x177 modules.
 
 #### Examples
 
@@ -65,6 +91,12 @@ verify contact
 
 ```
 OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&n=&i=rd82URz8_ac&s=MFRLUHvIHlq
+```
+
+verify contact, inviter using three relays
+
+```
+OPENPGP4FPR:EEA98F87742EF2FD6C23677F1E1142828C202998#a=demo.fn8hk%40five.chat&r=demo.fn8hk%40nine.testrun.org,demo%40example.org&n=&i=rd82URz8_ac&s=MFRLUHvIHlq
 ```
 
 join regular group
@@ -108,9 +140,9 @@ The "Invite Links" solve these problems:
 ### Syntax
 
 ```
-https://i.delta.chat/#FINGERPRINT&a=ADDR&n=NAME&i=INVITENUMBER&s=AUTH
-https://i.delta.chat/#FINGERPRINT&a=ADDR&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
-https://i.delta.chat/#FINGERPRINT&a=ADDR&b=BROADCAST_NAME&x=BROADCAST_ID&j=INVITENUMBER&s=AUTH
+https://i.delta.chat/#FINGERPRINT&a=ADDR&r=ADDRS&n=NAME&i=INVITENUMBER&s=AUTH
+https://i.delta.chat/#FINGERPRINT&a=ADDR&r=ADDRS&g=GROUPNAME&x=GROUPID&i=INVITENUMBER&s=AUTH
+https://i.delta.chat/#FINGERPRINT&a=ADDR&r=ADDRS&b=BROADCAST_NAME&x=BROADCAST_ID&j=INVITENUMBER&s=AUTH
 ```
 
 The syntax is the same as in [OPENPGP4FPR](#OPENPGP4FPR) with two differences:
@@ -128,6 +160,12 @@ get in contact / verify contact
 
 ```
 https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40five.chat&n=&i=rd82URz8_ac&s=MFRLUHvIHlq
+```
+
+get in contact / verify contact, inviter using three relays
+
+```
+https://i.delta.chat/#EEA98F87742EF2FD6C23677F1E1142828C202998&a=demo.fn8hk%40five.chat&r=demo.fn8hk%40nine.testrun.org,demo%40example.org&n=&i=rd82URz8_ac&s=MFRLUHvIHlq
 ```
 
 join regular group
