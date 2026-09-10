@@ -171,6 +171,8 @@ e.g. `ipvzrws6x@example.org`,
 and a password that is at least 30 characters long,
 drawn from the full set of alphanumeric characters (`A-Z`, `a-z`, `0-9`).
 
+If domain name is used, then you can also specify IP addresses to prefill DNS cache, like `dcaccount:example.org?a=127.0.0.1,[::1]`. Multiple addresses are seperated by comma.
+
 If URL is used, e.g. `DCACCOUNT:https://example.org/new_email?t=1w_7wDjgjelxeX884x96v3`,
 then the client should make an HTTP/1.1 GET request
 and receive account setup information as a JSON object.
