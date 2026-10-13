@@ -1,6 +1,6 @@
 # interface
 
-General and shared components and discussions relating to deltachat user interface
+General and shared components and discussions relating to Delta Chat's user interface
 
 # Sites that contain documentation
 
